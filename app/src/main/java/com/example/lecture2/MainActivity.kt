@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_second.*
 
 class MainActivity : AppCompatActivity() {
 
+    private val CODE =1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("gender", genderEditText.text.toString())
         intent.putExtra("birthDate", birthDayEditText.text.toString())
 
-        startActivity(intent)
+        startActivityForResult(intent,CODE)
     }
 
 
