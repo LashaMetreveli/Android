@@ -1,12 +1,14 @@
 package com.example.lecture2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_second.*
+
 
 class MainActivity : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,17 +16,28 @@ class MainActivity : AppCompatActivity() {
         init()
     }
 
+
+
     private fun init() {
-        loginButtom.setOnClickListener {
-            if (emailEditText.text.toString().isNotEmpty() && passwordEditText.text.toString()
-                    .isNotEmpty()
-            ) {
-                Toast.makeText(this, "Login is success", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
-            }
+        openSecondActivity.setOnClickListener {
+            openSecondActivity()
         }
+
     }
+
+
+    private fun openSecondActivity(){
+        val intent = Intent(this,SecondActivity::class.java)
+
+        intent.putExtra("firstName", firstNameEditText.text.toString())
+        intent.putExtra("lastName", lastNameEditText.text.toString())
+        intent.putExtra("email", emailEditText.text.toString())
+        intent.putExtra("gender", genderEditText.text.toString())
+        intent.putExtra("birthDate", birthDayEditText.text.toString())
+
+        startActivity(intent)
+    }
+
 
 
 }

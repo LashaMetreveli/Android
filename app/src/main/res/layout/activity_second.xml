@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".SecondActivity"
+    android:background="@drawable/background"
+    >
+
 
 
     <ImageView
@@ -20,55 +22,59 @@
         android:src="@drawable/profile"
         android:textColor="#ffffff " />
 
-    <EditText
-        android:id="@+id/firstNameEditText"
+    <TextView
+        android:id="@+id/firstNameTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="40dp"
-        android:maxLines="1"
-        android:hint="Enter Your FirstName"
+        android:layout_marginBottom="10dp"
+        android:autoSizeTextType="uniform"
         android:textColor="#ffffff " />
 
-    <EditText
-        android:id="@+id/lastNameEditText"
+    <TextView
+        android:id="@+id/lastNameTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:maxLines="1"
-        android:hint="Enter Your LastName"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="10dp"
+        android:autoSizeTextType="uniform"
         android:textColor="#ffffff " />
 
-    <EditText
-        android:id="@+id/emailEditText"
+    <TextView
+        android:id="@+id/emailTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Your Email"
-        android:maxLines="1"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="10dp"
+        android:autoSizeTextType="uniform"
         android:textColor="#ffffff " />
 
 
-    <EditText
-        android:id="@+id/genderEditText"
+    <TextView
+        android:id="@+id/genderTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Your Gender"
-        android:maxLines="1"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="10dp"
+        android:autoSizeTextType="uniform"
         android:textColor="#ffffff " />
 
-    <EditText
-        android:id="@+id/birthDayEditText"
+    <TextView
+        android:id="@+id/birthDayTextView"
         android:layout_width="match_parent"
-        android:maxLines="1"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
         android:layout_marginBottom="30dp"
-        android:hint="Enter Your Birth Date"
+        android:autoSizeTextType="uniform"
         android:textColor="#ffffff " />
 
 
     <Button
-        android:id="@+id/openSecondActivity"
+        android:id="@+id/editProfileButton"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Submit Profile"
+        android:text="Edit Your Profile"
         android:textAllCaps="false" />
 
 
