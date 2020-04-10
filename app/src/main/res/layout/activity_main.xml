@@ -4,71 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
 
-    <ImageView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:adjustViewBounds="true"
-        android:maxWidth="200dp"
-        android:maxHeight="250dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/profile"
-        android:textColor="#ffffff " />
-
-    <EditText
-        android:id="@+id/firstNameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:maxLines="1"
-        android:hint="Enter Your FirstName"
-        android:textColor="#ffffff " />
-
-    <EditText
-        android:id="@+id/lastNameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:maxLines="1"
-        android:hint="Enter Your LastName"
-        android:textColor="#ffffff " />
-
-    <EditText
-        android:id="@+id/emailEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Your Email"
-        android:maxLines="1"
-        android:textColor="#ffffff " />
-
-
-    <EditText
-        android:id="@+id/genderEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Your Gender"
-        android:maxLines="1"
-        android:textColor="#ffffff " />
-
-    <EditText
-        android:id="@+id/birthDayEditText"
-        android:layout_width="match_parent"
-        android:maxLines="1"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:hint="Enter Your Birth Date"
-        android:textColor="#ffffff " />
-
+        android:layout_height="666dp" />
 
     <Button
-        android:id="@+id/openSecondActivity"
+        android:id="@+id/addContactButton"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Submit Profile"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:text="Add Contact"
         android:textAllCaps="false" />
 
 
