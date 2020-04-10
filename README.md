@@ -12,3 +12,9 @@ what it does : simple login screen. cheks if password and email fields are empty
 branch - Davaleba2
 
 what it does : Basic profile editor
+
+**davaleba 3 ------------------------------------** 
+
+branch - Davaleba3
+
+what it does : RecyclerView. Add / Remove Contacts
