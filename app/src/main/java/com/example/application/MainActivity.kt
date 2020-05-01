@@ -1,49 +1,62 @@
 package com.example.application
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log.d
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
 
 
-     val items = ArrayList<ContactModel>()
-
-    private lateinit var adapter: RecyclerViewAdapter
+    private lateinit var adapter: UserRecyclerViewAdapter
+    private var users = ArrayList<UserListModel.Data>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        init()
+
+        //call method
+         getAllUsers()
     }
 
 
-    private fun init(){
+    private fun getAllUsers(){
 
-        addContactButton.setOnClickListener{
-            items.add(ContactModel(R.drawable.contact,"contact new","description","11/07/2021"))
-            adapter.notifyItemInserted(items.size-1)
-            recyclerView.scrollToPosition(items.size-1)
-        }
-
-
-        addData()
 
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = RecyclerViewAdapter(items, this)
+
+        adapter = UserRecyclerViewAdapter(users,this)
         recyclerView.adapter = adapter
+
+        //getRequest with path users
+        DataLoader.getRequest("users",object : CustomCallback{
+            override fun onSuccess(result: String) {
+
+
+                //parse JSON
+                var userModel = Gson().fromJson(result,UserListModel::class.java)
+
+                //add users to list
+                users.addAll(userModel.data)
+
+                adapter.notifyDataSetChanged()
+
+                // see count of users
+                d("userCount", "${userModel.data.size }")
+
+                //see avatar of second user
+                d("userCount", "${userModel.data[1].avatar }")
+
+            }
+        })
+
+
+
     }
 
-    private fun addData(){
-        items.add(ContactModel(R.drawable.contact,"contact 1","description","11/07/2019"))
-        items.add(ContactModel(R.drawable.contact,"contact 2","description","22/03/2018"))
-        items.add(ContactModel(R.drawable.contact,"contact 3","description","4/05/2018"))
-        items.add(ContactModel(R.drawable.contact,"contact 4","description","7/05/2018"))
-        items.add(ContactModel(R.drawable.contact,"contact 5","description","3/05/2018"))
-        items.add(ContactModel(R.drawable.contact,"contact 6","description","1/05/2017"))
 
-    }
+
 }
