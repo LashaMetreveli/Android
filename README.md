@@ -4,7 +4,7 @@
 
 branch - Davaleba1
 
-what it does : simple login screen. cheks if password and email fields are empty or not
+what it does : simple login screen. checks if password and email fields are empty 
 
 
 **davaleba 2 ------------------------------------** 
