@@ -18,3 +18,9 @@ what it does : Basic profile editor
 branch - Davaleba3
 
 what it does : RecyclerView. Add / Remove Contacts
+
+**davaleba 4 ------------------------------------** 
+
+branch - Davaleba4
+
+what it does : Simple RecyclerView displays list of users , converted from GSON 
