@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="itemView"
+            type="com.example.application.ItemModel" />
+    </data>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#D1D1D1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:src="@{itemView.cover}"/>
+
+
+        <TextView
+
+            android:id="@+id/titleENTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="@{itemView.titleEN}"/>
+
+        <TextView
+            android:id="@+id/descriptionENTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:text="@{itemView.descriptionEN}" />
+
+
+    </LinearLayout>
+
+
+</layout>
